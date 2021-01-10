@@ -95,7 +95,7 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
     ],
-    'DATETIME_FORMAT': "%Y-%m-%d",
+    'DATETIME_FORMAT': "%d-%m-%Y",
 }
 
 
