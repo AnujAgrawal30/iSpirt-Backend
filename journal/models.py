@@ -13,13 +13,13 @@ class Article(models.Model):
     name = models.CharField(max_length=200)
     journal = models.ForeignKey(Journal, on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
-    abstract = models.TextField()
+    abstract = models.TextField(blank=True)
     content = models.TextField()
-    author = models.TextField()
+    author = models.TextField(blank=True)
     last_update = models.DateTimeField(auto_now=True)
-    tags = models.TextField()
-    designation = models.CharField(max_length=100)
-    disclosures = models.TextField()
+    tags = models.TextField(blank=True)
+    designation = models.CharField(max_length=100, blank=True)
+    disclosures = models.TextField(blank=True)
     status_choices = ["Working Paper", "Final"]
     status_choices = [(i, i) for i in status_choices]
     status = models.CharField(max_length=50, choices=status_choices)
