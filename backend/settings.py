@@ -26,7 +26,7 @@ SECRET_KEY = '*3x*_qi85u1y=t6tvp5q+2=-=a9r!gvt&3p#k0%*xpjkf3$8h('
 DEBUG = True
 # DEBUG = False
 
-ALLOWED_HOSTS = ['journals.ispirt.in', '127.0.0.1']
+ALLOWED_HOSTS = ['research.ispirt.in', '127.0.0.1']
 
 
 # Application definition
