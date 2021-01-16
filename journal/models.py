@@ -20,6 +20,9 @@ class Article(models.Model):
     tags = models.TextField(blank=True)
     designation = models.CharField(max_length=100, blank=True)
     disclosures = models.TextField(blank=True)
+    content_choices = ["HTML", "markdown"]
+    content_choices = [(i, i) for i in content_choices]
+    content_type = models.CharField(max_length=50, choices=content_choices)
     status_choices = ["Working Paper", "Final"]
     status_choices = [(i, i) for i in status_choices]
     status = models.CharField(max_length=50, choices=status_choices)

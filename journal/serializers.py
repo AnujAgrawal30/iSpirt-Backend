@@ -6,7 +6,7 @@ from .models import *
 class ArticleNameSerializer(serializers.ModelSerializer):
     class Meta:
         model = Article
-        fields = ['title', 'author', 'tags']
+        fields = ['id', 'title', 'author', 'tags']
 
 class ArticleSerializer(serializers.ModelSerializer):
     content_html = serializers.SerializerMethodField()
@@ -19,10 +19,16 @@ class ArticleSerializer(serializers.ModelSerializer):
         exclude = ('content', 'abstract')
     
     def get_content_html(self, obj):
-        return get_html(obj.content)
+        if obj.content_type == 'markdown':
+            return get_html(obj.content)
+        else:
+            return obj.content
     
     def get_abstract_html(self, obj):
-        return get_html(obj.abstract)
+        if obj.content_type == 'markdown':
+            return get_html(obj.abstract)
+        else:
+            return obj.abstract
 
 def get_html(md):
     html = markdown.markdown(md)
