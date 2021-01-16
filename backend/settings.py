@@ -23,8 +23,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '*3x*_qi85u1y=t6tvp5q+2=-=a9r!gvt&3p#k0%*xpjkf3$8h('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-# DEBUG = False
+# DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['research.ispirt.in', '127.0.0.1']
 
