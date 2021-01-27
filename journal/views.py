@@ -22,8 +22,9 @@ class ArticleViewSet(viewsets.ModelViewSet):
 @permission_classes((permissions.AllowAny,))
 def get_article(request):
     name = request.GET["name"]
-    return Response(name)
-    article = Article.objects.get(name=request.GET['name'])
+    # return Response(name)
+    " ".join(name.split("%20"))
+    article = Article.objects.get(name=name)
     # return Response(request.GET["name"])
     response = ArticleSerializer(data=article, read_only=True)
     if response.is_valid:
