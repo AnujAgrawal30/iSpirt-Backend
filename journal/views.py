@@ -29,3 +29,4 @@ def get_article(request):
     response = ArticleSerializer(data=article, read_only=True)
     if response.is_valid():
         return Response(response.data)
+    return Response(response.errors)
