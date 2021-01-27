@@ -22,10 +22,11 @@ from . import views
 router = routers.DefaultRouter()
 
 router.register(r'articles', views.ArticleViewSet)
-router.register(r'article_by_name', views.ArticleViewSet)
+# router.register(r'article_by_name', views.get_article)
 # router.register(r'articles/', views.ArticleViewSet)
 
 urlpatterns = [
     # path('get_journals', views.get_journals),
     path('', include(router.urls)),
+    path('article_by_name', views.get_article)
 ]
