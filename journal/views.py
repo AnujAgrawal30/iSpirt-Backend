@@ -27,6 +27,7 @@ def get_article(request):
     article = Article.objects.get(name=name)
     # return Response(request.GET["name"])
     response = ArticleSerializer(article, many=True)
+    return Response(response.data)
     if response.is_valid():
         return Response(response.data)
     return Response(response.errors)
