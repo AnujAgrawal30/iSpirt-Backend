@@ -25,7 +25,8 @@ def get_article(request):
     # return Response(name)
     " ".join(name.split("%20"))
     article = Article.objects.get(name=name)
-    return Response(article.values)
+    # return Response(request.GET["name"])
+    response = ArticleSerializer.serialize(article)
     if response.is_valid():
         return Response(response.data)
     return Response(response.errors)
