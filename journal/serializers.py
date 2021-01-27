@@ -6,7 +6,7 @@ from .models import *
 class ArticleNameSerializer(serializers.ModelSerializer):
     class Meta:
         model = Article
-        fields = ['id', 'title', 'author', 'tags']
+        fields = ['id', 'title', 'author', 'tags', 'name']
 
 class ArticleSerializer(serializers.ModelSerializer):
     content_html = serializers.SerializerMethodField()
