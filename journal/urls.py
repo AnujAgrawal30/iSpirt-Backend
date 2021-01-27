@@ -22,6 +22,7 @@ from . import views
 router = routers.DefaultRouter()
 
 router.register(r'articles', views.ArticleViewSet)
+router.register(r'article_by_name', views.ArticleViewSet)
 # router.register(r'articles/', views.ArticleViewSet)
 
 urlpatterns = [
